@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" id="UpDownNumber" />
+    <button class="Down">down</button>
+    <button class="Up">up</button>
+
+    <script>
+      const text = document.querySelector("#UpDownNumber");
+      const Down = document.querySelector(".Down");
+      const Up = document.querySelector(".Up");
+      let Val = 0;
+      let check = true;
+      Up.addEventListener("click", up);
+      function up() {
+        Val++;
+        text.value = Val;
+      }
+      Down.addEventListener("click", down);
+      function down() {
+        Val--;
+        text.value = Val;
+        if (text.value == -1) {
+          Val++;
+          text.value = Val;
+        }
+      }
+    </script>
+  </body>
+</html>
